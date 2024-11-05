@@ -5,7 +5,7 @@ Basic functionality achieved already in this forked repository.
 I want to improve on it by implementing more UI for customizability
 1. Visualise publisher sending event
 2. Visualise event routing in event bus
-3. UI to add more new queues
+3. UI to add more new queues 
 4. UI to add more different type of events
 
 ## User Journey
