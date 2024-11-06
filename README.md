@@ -9,7 +9,7 @@ Push effect
 - Eventhandler will be in the queue logic which then processes the event
 Subscriber
 - connects to event bus and creates own queue with own filters
-- handles the events in the queue
+- microservice connects to event bus and consumes from specific queue name
 Publisher
 - connects to event bus - creates one if not present
 - publishes message
