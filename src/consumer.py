@@ -72,6 +72,7 @@ def create_handler(name):
 event_subscriber.subscribe_events("documents_all", create_handler("All document events"), {'type': 'document'})
 event_subscriber.subscribe_events("documents_create", create_handler("'Create document' events"), {'type': 'document', 'event': 'create'})
 event_subscriber.subscribe_events("all", create_handler("All events"), {})
+# event_subscriber.subscribe_events("")
 
 
 print("Start consuming events")
