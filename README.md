@@ -75,3 +75,6 @@ python3 src/producer.py
 
 
 
+## RabbitMQ deets
+- x-match argument is set to any or all -> meaning that all the args must match / just one match will do
+- note how to instantiate queues, declare the exchange then the queue - connection/session based, so its tightly coupled and will always come together
