@@ -10,8 +10,9 @@ if __name__=="__main__":
     queue_name,args='',''
     if len(sys.argv) > 2:
         queue_name, args = sys.argv[1], json.loads(sys.argv[2])
-
     load_dotenv()
+
+    # Set up RabbitMQ connection
     exchange_name=os.environ['EXCHANGE_NAME']
     host=os.environ['RABBITMQ_HOST']
     port=int(os.environ['RABBITMQ_PORT'])
@@ -23,7 +24,8 @@ if __name__=="__main__":
     if not args:
         args=json.loads(os.environ['ARGS'])
     print(args,queue_name)
-    # create connection
+
+    # Create connection
     connection = pika.BlockingConnection(pika.ConnectionParameters(
         host=host,
         port=port,

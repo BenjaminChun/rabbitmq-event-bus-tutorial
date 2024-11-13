@@ -16,4 +16,10 @@ def callback(ch, method, properties, body):
 channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
-channel.start_consuming()
+try:
+    channel.start_consuming()
+except KeyboardInterrupt as e:
+    print("\nKeyboard Ctrl C detected\nGracefully closing connection")
+    channel.close()
+except Exception as e:
+    print(e)

@@ -14,6 +14,10 @@ Publisher
 - connects to event bus - creates one if not present
 - publishes message
 
+## T0DO
+- IAM, RBAC - ensure data/msg is only read by authorised authenticated ppl
+- data encryption at rest, in transit, in memory
+
 ## Ideation
 Basic functionality achieved already in this forked repository.
 I want to improve on it by implementing more UI for customizability
@@ -72,7 +76,14 @@ Open a new terminal window and run the producer:
 python3 src/producer.py
 ```
 
-
+## Demo
+1. set up exchange and queue -> catch all
+2. publish message -> default msg shld end up in catch all
+3. set up 2 more exchanges and queues -> 
+python src/setUpExchangeAndQueues.py test1 '{"type":"document"}'
+python src/setUpExchangeAndQueues.py test2 '{"event":"create"}'
+4. publish same event -> catch all and test2 queue should receive
+5. consume using test prog
 
 
 ## RabbitMQ deets

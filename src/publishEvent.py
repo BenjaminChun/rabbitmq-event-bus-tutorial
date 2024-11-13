@@ -11,6 +11,8 @@ if __name__=="__main__":
         headers,body = json.loads(sys.argv[1]),json.loads(sys.argv[2])
 
     load_dotenv()
+
+    # Set up RabbitMQ connection
     exchange_name=os.environ['EXCHANGE_NAME']
     host=os.environ['RABBITMQ_HOST']
     port=int(os.environ['RABBITMQ_PORT'])
